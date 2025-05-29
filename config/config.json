@@ -1,0 +1,28 @@
+{
+    "autosave": true,
+    "cpu": {
+        "enabled": true,
+        "huge-pages": true,
+        "huge-pages-jit": true,
+        "hw-aes": null,
+        "priority": null,
+        "memory-pool": true,
+        "yield": false,
+        "asm": true,
+        "max-threads-hint": 100
+    },
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "coin":"monero",
+            "algo": "rx/0",
+            "url": "gulf.moneroocean.stream:20128",
+            "user": "",
+            "pass": "x5",
+            "tls": true,
+            "keepalive": true,
+            "nicehash": false
+        }
+    ]
+}
