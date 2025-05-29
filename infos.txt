@@ -1,0 +1,40 @@
+1. Swapoff:
+
+Swapoff ist eine Funktion, die das Swap-System deaktiviert.
+Swap ist ein Speicherbereich, der verwendet wird, wenn der physische Speicher (RAM) nicht ausreicht. 
+Durch das Deaktivieren von Swap kann die Performance des Systems verbessert werden.
+
+2. randomx_boost.sh:
+
+randomx_boost.sh ist ein Skript, das die Performance des Systems verbessert, indem es msr (Model-Specific Registers) verwendet.
+MSR (Model-Specific Registers) sind spezielle Steuerregister in der CPU, mit denen man direkt beeinflussen kann, wie der Prozessor arbeitet
+unabhängig vom BIOS oder Betriebssystem.
+
+Gezielt eingesetzt bei XMRig (z. B. für RandomX), ermöglichen sie:
+
+✅ Turbo-Boost dauerhaft aktiv
+
+✅ Stromsparmodi abschalten (volle Leistung nonstop)
+
+✅ Optimale Nutzung von AVX2 & Cache
+
+✅ Mehr Hashrate ohne klassisches Overclocking
+
+[WARNING] DU MUSST IN DEN SECURE BOOT AUSCHalten, Anderenfalls funktioniert das Skript nicht
+
+
+3. enable_1gb_pages.sh:
+
+enable_1gb_pages.sh ist ein Skript, das die Performance des Systems verbessert, indem es 1GB-Pages verwendet.
+Ein Speicher benutzt Speicherblöcke von 4KB, aber 1GB-Pages nutzen Speicherblöcke von 1GB [RAM].
+Durch das Aktivieren von 1GB-Pages kann die Performance des Systems verbessert werden.
+
+KEINE SORGE WENN DU EINEN DUEL BOOT MACHST, BEINFLUSST DAS NICHT BEIDE SYSTEME
+NUR DAS SYSTEM MIT DEM DU XMRIG LAUNCHEN WILLST, ALSO WENN DU WINDOWS HAST LÄUFT, WIRD WINDOWS NICHT BEEINFLUSST
+
+
+[TIPP] Ich wurde alles machen aber swapoff gibt nur einen MINI boost 
+[TIPP] randomx_boost.sh gibt einen GROßEN boost 
+[TIPP] enable_1gb_pages.sh gibt einen GROßEN boost 
+[TIPP] enable_1gb_pages ist ein MUSS für RandomX
+[TIPP] randomx_boost.sh gibt einen Riesen boost, aber wenn du secure boot nicht ausschalten willst, lass es aus
