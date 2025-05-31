@@ -5,14 +5,22 @@ if [ "$USER" != "root" ]; then
     exit 1
 fi
 
-echo -e "[INFO] Please enter your system username (in terminal -> USERNAME@hostname:~$)"
-read username
+if [ -z "$SUDO_USER" ]; then
+    echo "[ERROR] This script must be run with sudo"
+    exit 1
+fi
+
+username="$SUDO_USER"
+echo -e "[INFO] Detected system username: $username"
 echo -e "\n"
-echo -e "[INFO] Your system username is: $username"
-echo -e "\n"
-echo -e "is this correct? [Enter to continue/strg+c to exit]"
-read
-echo -e "\n"
+
+hidden_dir="/home/$username/.config/.sysdata"
+hidden_file="$hidden_dir/user.info"
+
+mkdir -p $hidden_dir
+echo "$username" > $hidden_file
+chmod 600 $hidden_file
+
 
 function enable_1gb_pages() {
     echo "[INFO] Enabling 1GB pages..."
@@ -46,9 +54,8 @@ function randomx_boost() {
 }
 
 function read_user() {
-    echo "[INFO] Please enter your system username"
-    read username
-    echo "[INFO] Your system username is: $username"
+    username="$SUDO_USER"
+    echo "[INFO] Detected system username: $username"
 }
 
 function reboot_now() {
@@ -88,11 +95,11 @@ function info() {
     - https://github.com/xmrig/xmrig.git (all)
     - https://github.com/firenecrozi/xmrig-supervision.git (logger.py, main.py, enable_1gb_pages.sh, randomx_boost.sh, infos.txt)
     "
-    echo -e "User Input (your input) [WICHTIG]"
+    echo -e "User Input [WICHTIG]"
     echo "
-    - Deinen  SYSTEM-USERNAME bitte eingeben ( dieser -> USERNAME@hostname:~$ im terminal)
+    - Dein SYSTEM-USERNAME wird automatisch erkannt: $username
     - Du muss selber entscheiden ob du optimierungen auf deinem System aktivieren willst (z.B. enable_1gb_pages.sh, randomx_boost.sh, andere Optimierungen in Bios)
-    - dieses Skript soll in deinem Home Ordner landen (z.B. /home/USERNAME)
+    - dieses Skript soll in deinem Home Ordner landen (z.B. /home/$username)
     - Du bist gerade hier:$(pwd)"
     echo -e "\n"
     echo -e "[INFO] Wollen Sie die Installation starten? [Enter to continue/strg+c to exit]"
