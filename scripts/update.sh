@@ -12,7 +12,3 @@ function update() {
     git pull
     echo "[INFO] Update finished"
 }
-
-function init() {}
-    
-    
