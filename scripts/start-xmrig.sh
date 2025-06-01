@@ -16,3 +16,5 @@ function start() {
     echo "[INFO] Xmrig started successfully"
 }
     
+read_user
+start
