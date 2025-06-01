@@ -6,7 +6,7 @@ if [ "$USER" != "root" ]; then
 fi
 
 function read_user() {
-    username=$(cat /home/$SUDO_USER/.config/.sysdata/user.info)
+    username=$(cat /home/$(logname)/.config/.sysdata/user.info)
 }
 
 function start() {
