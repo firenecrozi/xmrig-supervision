@@ -114,7 +114,6 @@ function download_all() {
     apt update && apt install -y git build-essential python3-pip python3-dev libssl-dev libhwloc-dev libuv1-dev cmake msr-tools screen
     
     echo -e "\n[INFO] Installing Python packages..."
-    su $username -c "pip install APScheduler"
     
     echo -e "\n[INFO] Downloading repositories..."
     if [ ! -d "/home/$username/xmrig" ]; then
