@@ -1,4 +1,7 @@
 {
+    "randomx": {
+        "1gb-pages": true
+    },
     "autosave": true,
     "cpu": {
         "enabled": true,
