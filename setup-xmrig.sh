@@ -87,7 +87,7 @@ function info() {
     echo -e "\n"
     echo -e "Dependencies\n (Debian/Ubuntu packages / automatic install)"
     echo "
-    - Python 3.10+, Git, CMake, libhwloc-dev, libssl-dev, libuv1-dev, build-essential, python3-pip, msr-tools
+    - Python 3.10+, Git, CMake, libhwloc-dev, libssl-dev, libuv1-dev, build-essential, python3-pip, msr-tools, screen
     - Python packages: apscheduler, pathlib, subprocess, time, logger(self-made modul)
     "
     echo -e "Needed Repositories (download automatically)"
@@ -111,7 +111,7 @@ function info() {
 function download_all() {
     cd /home/$username
     echo "[INFO] Installing System dependencies..."
-    apt update && apt install -y git build-essential python3-pip python3-dev libssl-dev libhwloc-dev libuv1-dev cmake msr-tools
+    apt update && apt install -y git build-essential python3-pip python3-dev libssl-dev libhwloc-dev libuv1-dev cmake msr-tools screen
     
     echo -e "\n[INFO] Installing Python packages..."
     su $username -c "pip install APScheduler"
